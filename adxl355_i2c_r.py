@@ -154,6 +154,7 @@ class ADXL355:
     def getStatus(self):
         status = bus.read_byte_data(self._devAddr, STATUS)
         return status & STATUS_MASK_DATARDY
+
     status = property(getStatus)
 
     def getTemperature(self):
@@ -208,7 +209,6 @@ if __name__ == "__main__":
         try:
             allAxes = adxl355.axes
             wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']/128000.0+x_offset,"y-axis":allAxes['y']/128000.0+y_offset,"z-axis":allAxes['z']/128000.0+z_offset}}]
-            #wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']/128000.0,"y-axis":allAxes['y']/128000.0,"z-axis":allAxes['z']/128000.0}}]
             client.write_points(wp_body)
             #print ("All axes X: %f Y: %f Z: %f" % (allAxes['x']/128000.0, allAxes['y']/128000.0, allAxes['z']/128000.0))
             time.sleep(0.01)
