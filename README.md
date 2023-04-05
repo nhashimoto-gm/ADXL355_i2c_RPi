@@ -1,7 +1,7 @@
 # ADXL355_RPi
 
 ## 使用センサー
-ANALOG DEVICES ADXL355。
+ANALOG DEVICES ADXL355
 
 ( https://www.analog.com/jp/products/adxl355.html )
 
