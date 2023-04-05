@@ -1,4 +1,4 @@
-# ADXL355_RPi
+# ADXL355_i2c_RPi
 
 ## 使用センサー
 ANALOG DEVICES ADXL355
