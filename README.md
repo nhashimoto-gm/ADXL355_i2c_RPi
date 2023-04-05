@@ -19,12 +19,14 @@ i2cアドレスを0x1Dとしています。( MISO/ASELがLow ) ※Highで0x53と
 (留意点２) プルアップ抵抗は3k-5kΩ。( 3.7kΩだったかな )
 
 ## 測定レンジについて
-range4G設定にしてあります。( 128,000LSB/g ±4.096g-range )
+range2G設定にしてあります。( 256,000LSB/g ±4.096g-range )
 
-この場合の計算式は、以下のとおり。
+但し、算出数値の単位は加速度:m/s<sup>2</sup>
+
+この場合の計算式は、以下のとおり。( 重力加速度 g = 9.80665 m/sec/sec)
 
 ```
-"x-axis":allAxes['x']/128000.0,"y-axis":allAxes['y']/128000.0,"z-axis":allAxes['z']/128000.0
+"x-axis":allAxes['x']*g/256000.0,"y-axis":allAxes['y']*g/256000.0,"z-axis":allAxes['z']*g/256000.0
 ```
 >range2G設定 -> 256,000LSB/g ±2.048g-range
 >
@@ -37,7 +39,7 @@ LOCAL NETWORK上のInfluxdb v1.8サーバーへデータを送信。
 
 InfluxQLは以下のような形で情報取得。(Grafana等利用)
 ```
-SELECT mean("x-axis") FROM "autogen"."adxl355_measure" WHERE $timeFilter GROUP BY time(1s) fill(previous)
+SELECT mean("x-axis") FROM "autogen"."adxl355_measure" WHERE $timeFilter GROUP BY time($__interval) fill(none)
 ```
 
 ## Acknowledgments ( 謝辞 )
