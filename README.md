@@ -31,7 +31,7 @@ range4G設定にしてあります。( 128,000LSB/g ±4.096g-range )
 >range8G設定 ->  64,000LSB/g ±8.192g-range
 
 ## 注意
-最初はprint文のコメント外し、Influxdb書き込み部分をコメントアウトして要確認。
+最初はprint文をアンコメントし、Influxdb書き込み部分をコメントアウトして要確認。
 
 LOCAL NETWORK上のInfluxdb v1.8サーバーへデータを送信。
 
