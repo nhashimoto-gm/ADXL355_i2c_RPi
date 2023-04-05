@@ -5,12 +5,12 @@
 
 (https://www.analog.com/jp/products/adxl355.html)
 
-##接続機器と接続方法
+## 接続機器と接続方法
 RaspberryPIにi2c接続で通信。
 
 プルアップ抵抗は3k-5kΩ。( 3.7kΩだったかな。
 
-##測定レンジについて
+## 測定レンジについて
 range4G設定にしてあります。( 128,000LSB/g ±4.096g-range
 
 この場合の計算式は、以下のとおり。
@@ -22,7 +22,7 @@ range4G設定にしてあります。( 128,000LSB/g ±4.096g-range
 >
 >range8G設定 ->  46,000LSB/g ±8.192g-range
 
-##注意
+## 注意
 最初はprint文のコメント外し、Influxdb書き込み部分をコメントアウトして確認してみてください。
 
 LOCAL NETWORK上のInfluxdb v1.8サーバーへデータを送信。
