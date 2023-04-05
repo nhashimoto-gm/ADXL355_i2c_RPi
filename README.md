@@ -1,16 +1,23 @@
 # ADXL355_RPi
-センサーはアナログ・デバイセズのADXL355。
+
+##使用センサー
+アナログ・デバイセズのADXL355。
 (https://www.analog.com/jp/products/adxl355.html)
 
+##接続機器と接続方法
 RaspberryPIにi2c接続で通信。
 プルアップ抵抗は3k-5kΩ。( 3.7kΩだったかな。
-range4G設定にしてあります。128,000LSB/g ±4.096g-range
-この場合の計算式は、以下のとおりです。
+
+##測定レンジについて
+range4G設定にしてあります。( 128,000LSB/g ±4.096g-range
+この場合の計算式は、以下のとおり。
+,,,
 "x-axis":allAxes['x']/128000.0,"y-axis":allAxes['y']/128000.0,"z-axis":allAxes['z']/128000.0
+,,,
+>range2G設定 -> 256,000LSB/g ±2.048g-range
+>range8G設定 ->  46,000LSB/g ±8.192g-range
 
-*range2G設定 -> 256,000LSB/g ±2.048g-range
-*range8G設定 ->  46,000LSB/g ±8.192g-range
-
+##注意
 最初はprint文のコメント外し、Influxdb書き込み部分をコメントアウトして確認してみてください。
 
 LOCAL NETWORK上のInfluxdb v1.8サーバーへデータを送信。
