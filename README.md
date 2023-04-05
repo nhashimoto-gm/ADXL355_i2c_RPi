@@ -33,6 +33,7 @@ SELECT mean("x-axis") FROM "autogen"."adxl355_measure" WHERE $timeFilter GROUP B
 ```
 
 ## 謝辞
-markradさん、大変助かりました。
+
+Markrad, you have been very helpful.
 
 https://github.com/markrad/ADXL355
