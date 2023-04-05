@@ -1,6 +1,7 @@
 # ADXL355_i2c_RPi
 
 https://github.com/nhashimoto-gm/ADXL355_i2c_RPi
+<meta name="google-site-verification" content="lVHFZ-ZFH3VNdH7t3IWj2zC8bq_BkDAaBpOI0TvCpws" />
 
 ## 使用センサー
 ANALOG DEVICES ADXL355
