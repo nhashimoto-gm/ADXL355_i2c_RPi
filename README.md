@@ -5,7 +5,7 @@
 
 ( https://www.analog.com/jp/products/adxl355.html )
 
-ストロベリーリナックスのDIP化商品
+ストロベリーリナックスのADXL355 DIP化商品
 
 ( http://strawberry-linux.com/catalog/items?code=12355 )
 
