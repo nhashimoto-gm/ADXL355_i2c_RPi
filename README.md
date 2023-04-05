@@ -20,7 +20,7 @@ range4G設定にしてあります。( 128,000LSB/g ±4.096g-range
 ```
 >range2G設定 -> 256,000LSB/g ±2.048g-range
 >
->range8G設定 ->  46,000LSB/g ±8.192g-range
+>range8G設定 ->  64,000LSB/g ±8.192g-range
 
 ## 注意
 最初はprint文のコメント外し、Influxdb書き込み部分をコメントアウトして要確認。
