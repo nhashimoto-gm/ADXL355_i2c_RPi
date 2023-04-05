@@ -4,9 +4,11 @@ import time
 from influxdb import InfluxDBClient
 client = InfluxDBClient('192.168.1.180',8086,'root','','sensor')
 
-x_offset = -0.0146
-y_offset = 0.0008
-z_offset = -0.0234
+x_offset = 0.0
+y_offset = 0.0
+z_offset = 0.0
+
+g = 9.80665 # m/s/s
 
 POWER_CTL           = 0x2D
 
@@ -202,15 +204,15 @@ class ADXL355:
 
 if __name__ == "__main__":
     adxl355 = ADXL355()
-    adxl355.range = ADXL355Range.range4G
+    adxl355.range = ADXL355Range.range2G
     adxl355.lowpassFilter = ADXL355LowpassFilter.lowpassFilter_62_5
     adxl355.begin()
     while True:
         try:
             allAxes = adxl355.axes
-            wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']/128000.0+x_offset,"y-axis":allAxes['y']/128000.0+y_offset,"z-axis":allAxes['z']/128000.0+z_offset}}]
+            wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']*g/256000.0+x_offset,"y-axis":allAxes['y']*g/256000.0+y_offset,"z-axis":allAxes['z']*g/256000.0+z_offset}}]
             client.write_points(wp_body)
-            #print ("All axes X: %f Y: %f Z: %f" % (allAxes['x']/128000.0, allAxes['y']/128000.0, allAxes['z']/128000.0))
+            #print ("All axes X: %f Y: %f Z: %f" % (allAxes['x']*g/256000.0, allAxes['y']*g/256000.0, allAxes['z']*g/256000.0))
             time.sleep(0.01)
         except KeyboardInterrupt:
             # Assumes nothing external fiddles with this register
