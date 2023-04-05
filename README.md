@@ -1,11 +1,11 @@
 # ADXL355_RPi
 
 ## 使用センサー
-アナログ・デバイセズのADXL355。
+ANALOG DEVICES ADXL355。
 
 ( https://www.analog.com/jp/products/adxl355.html )
 
-ストロベリーリナックスのADXL355 DIP化商品
+Strawberry Linux Co.,Ltd. ADXL355 超低ノイズ３軸加速度センサモジュール（ディジタル出力）2g/4g/8g
 
 ( http://strawberry-linux.com/catalog/items?code=12355 )
 
