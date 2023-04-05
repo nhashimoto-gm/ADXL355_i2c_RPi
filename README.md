@@ -30,6 +30,8 @@ range2G設定にしてあります。( 256,000LSB/g ±4.096g-range )
 ```
 >range2G設定 -> 256,000LSB/g ±2.048g-range
 >
+>range4G設定 -> 128,000LSB/g ±4.096g-range
+>
 >range8G設定 ->  64,000LSB/g ±8.192g-range
 
 ## 注意
