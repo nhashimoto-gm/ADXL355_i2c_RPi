@@ -4,8 +4,8 @@ import time
 from influxdb import InfluxDBClient
 client = InfluxDBClient('192.168.1.180',8086,'root','','sensor')
 
-x_offset = -0.0147
-y_offset = 0
+x_offset = -0.0146
+y_offset = 0.0008
 z_offset = -0.0234
 
 POWER_CTL           = 0x2D
