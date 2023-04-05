@@ -5,6 +5,9 @@
 
 ( https://www.analog.com/jp/products/adxl355.html )
 
+ストロベリーリナックスのDIP化商品
+( http://strawberry-linux.com/catalog/items?code=12355 )
+
 ## 接続機器と接続方法
 RaspberryPIにi2c接続で通信。
 
