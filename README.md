@@ -31,3 +31,8 @@ InfluxQLは以下のような形で情報取得。(Grafana等利用)
 ```
 SELECT mean("x-axis") FROM "autogen"."adxl355_measure" WHERE $timeFilter GROUP BY time(1s) fill(previous)
 ```
+
+## 謝辞
+markradさん、大変助かりました。
+
+https://github.com/markrad/ADXL355
