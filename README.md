@@ -3,7 +3,7 @@
 ## 使用センサー
 アナログ・デバイセズのADXL355。
 
-(https://www.analog.com/jp/products/adxl355.html)
+( https://www.analog.com/jp/products/adxl355.html )
 
 ## 接続機器と接続方法
 RaspberryPIにi2c接続で通信。
