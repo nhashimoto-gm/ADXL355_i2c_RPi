@@ -1,6 +1,6 @@
 # ADXL355_RPi
 
-##使用センサー
+## 使用センサー
 アナログ・デバイセズのADXL355。
 
 (https://www.analog.com/jp/products/adxl355.html)
@@ -23,7 +23,7 @@ range4G設定にしてあります。( 128,000LSB/g ±4.096g-range
 >range8G設定 ->  46,000LSB/g ±8.192g-range
 
 ## 注意
-最初はprint文のコメント外し、Influxdb書き込み部分をコメントアウトして確認してみてください。
+最初はprint文のコメント外し、Influxdb書き込み部分をコメントアウトして要確認。
 
 LOCAL NETWORK上のInfluxdb v1.8サーバーへデータを送信。
 
