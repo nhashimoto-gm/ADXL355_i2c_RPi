@@ -4,6 +4,10 @@ import time
 from influxdb import InfluxDBClient
 client = InfluxDBClient('192.168.1.180',8086,'root','','sensor')
 
+x_offset = -0.0147
+y_offset = 0
+z_offset = -0.0234
+
 POWER_CTL           = 0x2D
 
 POWER_CTL_OFF       = 0x01
@@ -203,7 +207,8 @@ if __name__ == "__main__":
     while True:
         try:
             allAxes = adxl355.axes
-            wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']/128000.0,"y-axis":allAxes['y']/128000.0,"z-axis":allAxes['z']/128000.0}}]
+            wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']/128000.0+x_offset,"y-axis":allAxes['y']/128000.0+y_offset,"z-axis":allAxes['z']/128000.0+z_offset}}]
+            #wp_body = [{"measurement": "adxl355_measure","fields":{"x-axis":allAxes['x']/128000.0,"y-axis":allAxes['y']/128000.0,"z-axis":allAxes['z']/128000.0}}]
             client.write_points(wp_body)
             #print ("All axes X: %f Y: %f Z: %f" % (allAxes['x']/128000.0, allAxes['y']/128000.0, allAxes['z']/128000.0))
             time.sleep(0.01)
