@@ -14,11 +14,13 @@ Strawberry Linux Co.,Ltd. ADXL355 超低ノイズ３軸加速度センサモジ�
 ## 接続機器と接続方法
 RaspberryPIにi2c接続で通信。
 
-(留意点１) 3.3VをVSUPPLYとVDDIOに供給。SCLK/VSSIOとMISO/ASELはGNDに接続。
+(留意点1) 3.3VをVSUPPLYとVDDIOに供給。SCLK/VSSIOとMISO/ASELはGNDに接続。
 
 i2cアドレスを0x1Dとしています。( MISO/ASELがLow ) ※Highで0x53となる。
 
-(留意点２) プルアップ抵抗は3k-5kΩ。( 3.7kΩだったかな )
+(留意点2) プルアップ抵抗は3k-5kΩ。( 3.7kΩだったかな )
+
+(留意点3) OSErrorは受け流すことにしました。
 
 ## 測定レンジについて
 range2G設定にしてあります。( 256,000LSB/g ±4.096g-range )
