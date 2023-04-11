@@ -214,8 +214,10 @@ if __name__ == "__main__":
             client.write_points(wp_body)
             #print ("All axes X: %f Y: %f Z: %f" % (allAxes['x']*g/256000.0, allAxes['y']*g/256000.0, allAxes['z']*g/256000.0))
             time.sleep(0.01)
+        except OSError:
+            print("   OSError occurred!")
         except KeyboardInterrupt:
             # Assumes nothing external fiddles with this register
-            print ("     Ctrl-C seen - exiting")
+            print ("   Ctrl-C seen - exiting")
             adxl355.end()
             break
