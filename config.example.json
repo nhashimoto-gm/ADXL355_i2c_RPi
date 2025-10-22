@@ -1,0 +1,15 @@
+{
+  "i2c_bus": 1,
+  "device_address": 29,
+  "range_setting": 2,
+  "lowpass_filter": 6,
+  "x_offset": 0.0,
+  "y_offset": 0.0,
+  "z_offset": 0.0,
+  "influxdb_host": "192.168.1.180",
+  "influxdb_port": 8086,
+  "influxdb_user": "root",
+  "influxdb_password": "",
+  "influxdb_database": "sensor",
+  "sample_interval": 0.08
+}
